@@ -14,7 +14,7 @@ export const serviceGetFood = async (callback) => {
 export const serviceGetFoodById = async (id, callback) => {
   try {
     console.log(`###########SELECT * FROM FOOD WHERE id= ${id})`);
-    const results = await pool.query(`SELECT * FROM FOOD WHERE id= ${id};`);
+    const results = await pool.query(`SELECT * FROM food WHERE id= ${id};`);
     return callback(null, results);
   } catch (error) {
     return callback(error, null);

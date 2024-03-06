@@ -12,9 +12,9 @@ const pool = mysql.createPool({
   connectionLimit: 10,
   host: "localhost",
   user: "root",
-  password: "1234567890",
-  database: "motherandbabycare",
-  port: 3306,
+  password: "1234567",
+  database: "databasetest",
+  port: 3308,
 });
 export default pool;
 // Function to execute queries

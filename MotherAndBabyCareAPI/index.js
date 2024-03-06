@@ -2,7 +2,7 @@ import express from "express";
 
 import { routerFood } from "./api/food/food.router.js";
 const app = express();
-const port = 3001;
+const port = 3009;
 
 app.use(express.json());
 app.use("/food", routerFood);
