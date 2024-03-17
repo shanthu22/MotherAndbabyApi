@@ -11,10 +11,10 @@ dotenv.config();
 const pool = mysql.createPool({
   connectionLimit: 10,
   host: "localhost",
-  user: "root",
-  password: "1234567",
-  database: "databasetest",
-  port: 3308,
+  user: "shanthu",
+  password: "123456789",
+  database: "motherandbabycare",
+  port: 3307,
 });
 export default pool;
 // Function to execute queries
