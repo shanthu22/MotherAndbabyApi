@@ -11,6 +11,7 @@ export const controllerGetFood = (req, res) => {
   console.log("controllerGetFood+++++++++++++++");
   serviceGetFood((error, results) => {
     if (error) {
+      console.log("Error:", error);
       //console.error("Error:", err);
       res.status(500).json({ message: "Error in controller" });
     } else {
@@ -22,10 +23,10 @@ export const controllerGetFood = (req, res) => {
 
 export const controllerGetFoodById = (req, res) => {
   const id = req.params.id;
-  console.log("Id++++++++++++" + id);
+  console.log("Controller Get Food BY IDD" + id);
   serviceGetFoodById(id, (error, results) => {
     if (error) {
-      res.status(500).json({ message: "Error in controller" });
+      res.status(500).json({ message: error.body });
     } else {
       res.status(200).json(results);
     }
@@ -64,7 +65,7 @@ export const controllerUpdateFood = (req, res) => {
 export const controllerDeleteFood = (req, res) => {
   const id = req.params.id;
   serviceDeleteFood(id, (error, results) => {
-    if (error) { 
+    if (error) {
       res.status(500).json({ message: "Error in controller" });
     } else {
       res.status(200).json(results);

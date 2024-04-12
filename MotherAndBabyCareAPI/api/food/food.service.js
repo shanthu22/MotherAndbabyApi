@@ -4,7 +4,8 @@ import pool from "../../db.js";
 export const serviceGetFood = async (callback) => {
   console.log("serviceGetFood+++++++++++++++");
   try {
-    const results = await pool.query(`SELECT * FROM ${"food"};`);
+    const results = await pool.query(`SELECT * FROM ${"FOOD"};`);
+    console.log("hihhii");
     return callback(null, results);
   } catch (error) {
     return callback(error, null);

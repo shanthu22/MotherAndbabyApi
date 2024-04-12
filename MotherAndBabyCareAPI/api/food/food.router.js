@@ -6,11 +6,11 @@ import {
   controllerDeleteFood,
 } from "./food.controller.js";
 import express from "express";
-
+import { verifyToken } from "../../jwtFiles/verifyToken.js";
 export const routerFood = express.Router();
 
-routerFood.get("/", controllerGetFood);
-routerFood.get("/:id", controllerGetFoodById);
-routerFood.post("/", controllerAddFood);
-routerFood.put("/:id", controllerUpdateFood);
-routerFood.delete("/:id", controllerDeleteFood);
+routerFood.get("/", verifyToken, controllerGetFood);
+routerFood.get("/:id", verifyToken, controllerGetFoodById);
+routerFood.post("/", verifyToken, controllerAddFood);
+routerFood.put("/:id", verifyToken, controllerUpdateFood);
+routerFood.delete("/:id", verifyToken, controllerDeleteFood);

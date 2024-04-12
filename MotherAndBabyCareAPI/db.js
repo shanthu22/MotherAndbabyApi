@@ -11,10 +11,10 @@ dotenv.config();
 const pool = mysql.createPool({
   connectionLimit: 10,
   host: "localhost",
-  user: "shanthu",
-  password: "123456789",
+  user: "root",
+  password: "1234567890",
   database: "motherandbabycare",
-  port: 3307,
+  port: 3306,
 });
 export default pool;
 // Function to execute queries
@@ -36,7 +36,14 @@ const testmyshit = async () => {
     // Execute a query
     const results = await query("SELECT * FROM food");
     console.log(results);
-
+    // pool.query((error, data) => {
+    //   // console.log(results);
+    //   if (error) {
+    //     console.log(error);
+    //   } else {
+    //     console.log("Connected to the database");
+    //   }
+    // });
     // Perform other operations...
   } catch (error) {
     console.error("Error:", error);
