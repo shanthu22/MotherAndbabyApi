@@ -1,62 +1,73 @@
-// app.js
-// import express from "express";
 import mysql from "mysql2/promise";
 import dotenv from "dotenv";
-
 dotenv.config();
 
-// const app = express();
-// const port = 3000;
+/**
+ * Creates a connection pool for MySQL database.
+ * @typedef {Object} Pool
+ * @property {number} connectionLimit - The maximum number of connections allowed in the pool.
+ * @property {string} host - The hostname of the database server.
+ * @property {string} user - The username for authenticating with the database server.
+ * @property {string} password - The password for authenticating with the database server.
+ * @property {string} database - The name of the database to connect to.
+ * @property {number} port - The port number of the database server.
+ */
 
-const pool = mysql.createPool({
-  connectionLimit: 10,
-  host: process.env.DB_HOST,
-  user: process.env.DB_USER,
-  password: process.env.DB_PASSWORD,
-  database: process.env.DB_NAME,
-  port: process.env.DB_PORT,
-});
+class Pool {
+  constructor() {
+    if (!Pool.instance) {
+      console.log(process.env.DB_HOST);
+      console.log(process.env.DB_USER);
+      console.log(process.env.DB_PASSWORD);
+      console.log(process.env.DB_NAME);
+      console.log(process.env.DB_PORT);
+      this.connectionLimit = 10;
+      this.host = process.env.DB_HOST;
+      this.user = process.env.DB_USER;
+      this.password = process.env.DB_PASSWORD;
+      this.database = process.env.DB_NAME;
+      this.port = process.env.DB_PORT;
+
+      // Create the MySQL pool
+      this.pool = mysql.createPool({
+        connectionLimit: this.connectionLimit,
+        host: this.host,
+        user: this.user,
+        password: this.password,
+        database: this.database,
+        port: this.port,
+      });
+      Pool.instance = this.pool;
+    }
+    return Pool.instance;
+  }
+}
+
+// const pool = mysql.createPool({
+//   connectionLimit: 10,
+//   host: "localhost",
+//   user: "shanthu",
+//   password: "123456789",
+//   database: "motherandbabycare",
+//   port: 3307,
+// });
+
+const pool = new Pool(); // Creating a singleton instance of Pool
 export default pool;
-// Function to execute queries
-const query = async (sql, values) => {
-  return new Promise((resolve, reject) => {
-    pool.query(sql, values, (error, results) => {
-      if (error) {
-        reject(error);
-        return;
-      }
-      resolve(results);
-    });
-  });
-};
 
-// Example usage
-const testmyshit = async () => {
+//Test the Conection to MYSQL DB
+const testConnection = async () => {
+  let connection;
   try {
-    // Execute a query
-    const results = await query("SELECT * FROM food");
-    console.log(results);
-    // pool.query((error, data) => {
-
-    //   if (error) {
-    //     console.log(error);
-    //   } else {
-    //     console.log("Connected to the database");
-    //   }
-    // });
-    // Perform other operations...
+    connection = await pool.getConnection();
+    console.log("Connection successful");
   } catch (error) {
-    console.error("Error:", error);
+    console.error("Error in connection:", error);
+  } finally {
+    if (connection) {
+      connection.release(); // Release the connection back to the pool
+    }
   }
 };
 
-// connection.connect((error) => {
-//   if (error) {
-//     console.log(error);
-//   } else {
-//     console.log("Connected to the database");
-//   }
-// });
-
-// export default connection;
-// testmyshit();
+testConnection();
