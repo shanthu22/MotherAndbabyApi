@@ -43,15 +43,6 @@ class Pool {
   }
 }
 
-// const pool = mysql.createPool({
-//   connectionLimit: 10,
-//   host: "localhost",
-//   user: "shanthu",
-//   password: "123456789",
-//   database: "motherandbabycare",
-//   port: 3307,
-// });
-
 const pool = new Pool(); // Creating a singleton instance of Pool
 export default pool;
 

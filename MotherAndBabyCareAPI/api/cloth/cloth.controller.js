@@ -34,7 +34,7 @@ export const controllerAddCloth = (req, res) => {
     if (error) {
       res.status(500).json({ message: "Error in controller" });
     } else {
-      res.status(200).json({ message: "Food added successfully" });
+      res.status(200).json({ message: "Cloth added successfully" });
     }
   });
 };
@@ -49,7 +49,7 @@ export const controllerUpdateCloth = (req, res) => {
     if (error) {
       res.status(500).json({ message: "Error in controller" });
     } else {
-      res.status(200).json({ message: "Food updated successfully" });
+      res.status(200).json({ message: "Cloth updated successfully" });
     }
   });
 };

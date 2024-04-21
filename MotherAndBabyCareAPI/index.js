@@ -2,6 +2,8 @@ import express from "express";
 import { GenerateToken } from "./jwtFiles/generateToken.js";
 import { routerFood } from "./api/food/food.router.js";
 import { routerCloth } from "./api/cloth/cloth.router.js";
+import { routerBath } from "./api/bath/bath.router.js";
+import { routerToys } from "./api/toys/toys.router.js";
 import jwt from "jsonwebtoken";
 
 const app = express();
@@ -37,4 +39,5 @@ app.post("/test", (req, res) => {
 app.post("/login", GenerateToken);
 app.use("/food", routerFood);
 app.use("/cloth", routerCloth);
-app.use("/toys", routerFood);
+app.use("/bath", routerBath);
+app.use("/toys", routerToys);
