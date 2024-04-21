@@ -1,6 +1,7 @@
 import express from "express";
 import { GenerateToken } from "./jwtFiles/generateToken.js";
 import { routerFood } from "./api/food/food.router.js";
+import { routerCloth } from "./api/cloth/cloth.router.js";
 import jwt from "jsonwebtoken";
 
 const app = express();
@@ -35,5 +36,5 @@ app.post("/test", (req, res) => {
 // Protected route with error handling
 app.post("/login", GenerateToken);
 app.use("/food", routerFood);
-app.use("/clothing", routerFood);
+app.use("/cloth", routerCloth);
 app.use("/toys", routerFood);

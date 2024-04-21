@@ -51,7 +51,7 @@ export const controllerAddFood = (req, res) => {
     if (error) {
       res.status(500).json({ message: "Error in controller" });
     } else {
-      res.status(200).json(results);
+      res.status(200).json({ message: "Food added successfully" });
     }
   });
 };
@@ -86,7 +86,7 @@ export const controllerDeleteFood = (req, res) => {
     if (error) {
       res.status(500).json({ message: "Error in controller" });
     } else {
-      res.status(200).json({ message: "Food updated successfully" });
+      res.status(200).json({ message: "Food Deleted successfully" });
     }
   });
 };
