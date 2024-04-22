@@ -17,8 +17,12 @@ export const GenerateToken = (req, res, next) => {
     return res.status(401).json({ message: "Invalid username or password" });
   }
   //* Generate JWT token
-  const token = jwt.sign({ id: user.id, username: user.username }, secretKey, {
-    expiresIn: "1h",
-  });
+  const token = jwt.sign(
+    { id: user.id, username: user.username },
+    secretKey
+    //   {
+    //   expiresIn: "1h",
+    // }
+  );
   res.status(200).json({ token: token });
 };
