@@ -1,5 +1,6 @@
 import mysql from "mysql2/promise";
 import dotenv from "dotenv";
+import logger from "./logger.js";
 dotenv.config();
 
 /**
@@ -38,6 +39,7 @@ class Pool {
         port: this.port,
       });
       Pool.instance = this.pool;
+      logger.info("DB Connection-- New Pool instance created");
     }
     return Pool.instance;
   }

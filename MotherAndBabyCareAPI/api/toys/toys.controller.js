@@ -28,8 +28,8 @@ export const controllerGetToysById = (req, res) => {
 };
 
 export const controllerAddToys = (req, res) => {
-  const { name, description, price, quantity, photoUrl } = req.body;
-  const data = { name, description, price, quantity, photoUrl };
+  const { name, description, price, quantity, imagePath } = req.body;
+  const data = { name, description, price, quantity, imagePath };
   serviceAddToys(data, (error, results) => {
     if (error) {
       res.status(500).json({ message: "Error in controller" });
@@ -40,9 +40,9 @@ export const controllerAddToys = (req, res) => {
 };
 
 export const controllerUpdateToys = (req, res) => {
-  const { id, name, description, price, quantity, expDate, photoUrl } =
+  const { id, name, description, price, quantity, expDate, imagePath } =
     req.body;
-  const data = { id, name, description, price, quantity, expDate, photoUrl };
+  const data = { id, name, description, price, quantity, expDate, imagePath };
   data.id = req.params.id;
 
   serviceUpdateToys(data, (error, results) => {

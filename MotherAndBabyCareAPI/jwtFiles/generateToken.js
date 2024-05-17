@@ -1,7 +1,7 @@
 import jwt from "jsonwebtoken";
 const users = [
-  { id: 1, username: "test1", password: "123456789" },
-  { id: 2, username: "test2", password: "123456789" },
+  { id: 1, username: "test", password: "123", role: "admin" },
+  { id: 2, username: "test2", password: "123", role: "user" },
 ];
 //!get this from ENV
 const secretKey = "secretkey";
@@ -13,6 +13,7 @@ export const GenerateToken = (req, res, next) => {
   const user = users.find(
     (user) => user.username === username && user.password === password
   );
+  console.log(user.role);
   if (!user) {
     return res.status(401).json({ message: "Invalid username or password" });
   }

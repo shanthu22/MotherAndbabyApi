@@ -17,6 +17,7 @@ export const verifyToken = (req, res, next) => {
       return res.status(401).json({ message: "Unauthorized" });
     }
     req.user = decoded;
+    console.log("your user name is " + user.username);
 
     next();
   });

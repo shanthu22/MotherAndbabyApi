@@ -34,8 +34,8 @@ export const controllerGetBathById = (req, res) => {
 };
 
 export const controllerAddBath = (req, res) => {
-  const { name, description, price, quantity, expDate, photoUrl } = req.body;
-  const data = { name, description, price, quantity, expDate, photoUrl };
+  const { name, description, price, quantity, expDate, imagePath } = req.body;
+  const data = { name, description, price, quantity, expDate, imagePath };
   serviceAddBath(data, (error, results) => {
     if (error) {
       res.status(500).json({ message: "Error in controller" });
@@ -46,9 +46,9 @@ export const controllerAddBath = (req, res) => {
 };
 
 export const controllerUpdateBath = (req, res) => {
-  const { id, name, description, price, quantity, expDate, photoUrl } =
+  const { id, name, description, price, quantity, expDate, imagePath } =
     req.body;
-  const data = { id, name, description, price, quantity, expDate, photoUrl };
+  const data = { id, name, description, price, quantity, expDate, imagePath };
   data.id = req.params.id;
 
   serviceUpdateBath(data, (error, results) => {

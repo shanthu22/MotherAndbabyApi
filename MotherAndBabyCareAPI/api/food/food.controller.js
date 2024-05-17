@@ -5,6 +5,7 @@ import {
   serviceUpdateFood,
   serviceDeleteFood,
 } from "./food.service.js";
+import logger from "../../logger.js";
 /**
  * Retrieves all food items.
  * @param {Object} req - The request object.
@@ -14,8 +15,10 @@ import {
 export const controllerGetFood = (req, res) => {
   serviceGetFood((error, results) => {
     if (error) {
+      logger.error(" Food controller--ERROR");
       res.status(500).json({ message: "Error in controller" });
     } else {
+      logger.info("Food controller-- retrieved successfully");
       res.status(200).json(results);
     }
   });
@@ -31,8 +34,10 @@ export const controllerGetFoodById = (req, res) => {
 
   serviceGetFoodById(id, (error, results) => {
     if (error) {
+      logger.error(" Food controller--ERROR");
       res.status(500).json({ message: "Error in controller" });
     } else {
+      logger.info("Food controller-- retrieved successfully");
       res.status(200).json(results);
     }
   });
@@ -44,13 +49,15 @@ export const controllerGetFoodById = (req, res) => {
  * @param {Object} res - The response object.
  */
 export const controllerAddFood = (req, res) => {
-  const { name, description, price, quantity, expDate, photoUrl } = req.body;
-  const data = { name, description, price, quantity, expDate, photoUrl };
+  const { name, description, price, quantity, expDate, imagePath } = req.body;
+  const data = { name, description, price, quantity, expDate, imagePath };
 
   serviceAddFood(data, (error, results) => {
     if (error) {
+      logger.error(" Food controller--ERROR");
       res.status(500).json({ message: "Error in controller" });
     } else {
+      logger.info("Food controller-- retrieved successfully");
       res.status(200).json({ message: "Food added successfully" });
     }
   });
@@ -62,16 +69,18 @@ export const controllerAddFood = (req, res) => {
  * @param {Object} res - The response object.
  */
 export const controllerUpdateFood = (req, res) => {
-  const { id, name, description, price, quantity, expDate, photoUrl } =
+  const { id, name, description, price, quantity, expDate, imagePath } =
     req.body;
-  const data = { id, name, description, price, quantity, expDate, photoUrl };
+  const data = { id, name, description, price, quantity, expDate, imagePath };
   data.id = req.params.id;
 
   serviceUpdateFood(data, (error, results) => {
     if (error) {
+      logger.error(" Food controller--ERROR");
       res.status(500).json({ message: "Error in controller" });
     }
-    res.status(200).json({ message: "Food updated successfully" });
+    logger.info("Food controller-- retrieved successfully");
+    res.status(200).json({ message: "Food Updated successfully", data: data });
   });
 };
 
@@ -84,8 +93,10 @@ export const controllerDeleteFood = (req, res) => {
   const id = req.params.id;
   serviceDeleteFood(id, (error, results) => {
     if (error) {
+      logger.error(" Food controller--ERROR");
       res.status(500).json({ message: "Error in controller" });
     } else {
+      logger.info("Food controller-- retrieved successfully");
       res.status(200).json({ message: "Food Deleted successfully" });
     }
   });

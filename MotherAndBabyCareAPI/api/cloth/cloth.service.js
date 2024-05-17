@@ -23,7 +23,7 @@ export const serviceGetClothById = async (id, callback) => {
 export const serviceAddCloth = async (data, callback) => {
   try {
     const results = await pool.query(
-      `INSERT INTO clothing (name, description, price, quantity, expDate, photoUrl)VALUES ("${data.name}", "${data.description}", ${data.price}, ${data.quantity}," ${data.expDate}","${data.photoUrl}");`
+      `INSERT INTO clothing (name, description, price, quantity, expDate, imagePath)VALUES ("${data.name}", "${data.description}", ${data.price}, ${data.quantity}," ${data.expDate}","${data.imagePath}");`
     );
     callback(null, results);
   } catch (error) {
@@ -34,7 +34,7 @@ export const serviceAddCloth = async (data, callback) => {
 export const serviceUpdateCloth = async (data, callback) => {
   try {
     const results = await pool.query(
-      `UPDATE clothing SET name ="${data.name}", description = "${data.description}", price = ${data.price}, quantity = ${data.quantity}, expDate = "${data.expDate}", photoUrl = "${data.photoUrl}" WHERE id = ${data.id}; `
+      `UPDATE clothing SET name ="${data.name}", description = "${data.description}", price = ${data.price}, quantity = ${data.quantity}, expDate = "${data.expDate}", imagePath = "${data.imagePath}" WHERE id = ${data.id}; `
     );
     callback(null, results);
   } catch (error) {

@@ -1,0 +1,36 @@
+{"level":30,"time":1715924201883,"pid":9528,"hostname":"shanthu","msg":"Hello, world!"}
+{"level":30,"time":1715925330475,"pid":13136,"hostname":"shanthu","msg":"Hello, world!"}
+{"level":30,"time":1715925335467,"pid":13136,"hostname":"shanthu","msg":"Food controller-- retrieved successfully"}
+{"level":30,"time":1715925336604,"pid":13136,"hostname":"shanthu","msg":"Food controller-- retrieved successfully"}
+{"level":30,"time":1715925337522,"pid":13136,"hostname":"shanthu","msg":"Food controller-- retrieved successfully"}
+{"level":30,"time":1715925382654,"pid":13136,"hostname":"shanthu","msg":"Food controller-- retrieved successfully"}
+{"level":30,"time":1715925386661,"pid":13136,"hostname":"shanthu","msg":"Food controller-- retrieved successfully"}
+{"level":30,"time":1715925387546,"pid":13136,"hostname":"shanthu","msg":"Food controller-- retrieved successfully"}
+{"level":30,"time":1715925388482,"pid":13136,"hostname":"shanthu","msg":"Food controller-- retrieved successfully"}
+{"level":50,"time":1715925435840,"pid":13136,"hostname":"shanthu","msg":" Food controller--ERROR"}
+{"level":50,"time":1715925437253,"pid":13136,"hostname":"shanthu","msg":" Food controller--ERROR"}
+{"level":30,"time":1715948747238,"pid":15132,"hostname":"shanthu","msg":"DB Connection-- New Pool instance created"}
+{"level":30,"time":1715948747257,"pid":15132,"hostname":"shanthu","msg":"Hello, world!"}
+{"level":30,"time":1715948759217,"pid":15132,"hostname":"shanthu","msg":"Food controller-- retrieved successfully"}
+{"level":30,"time":1715948762248,"pid":15132,"hostname":"shanthu","msg":"Food controller-- retrieved successfully"}
+{"level":30,"time":1715948771044,"pid":15132,"hostname":"shanthu","msg":"Food controller-- retrieved successfully"}
+{"level":30,"time":1715950386807,"pid":18116,"hostname":"shanthu","msg":"DB Connection-- New Pool instance created"}
+{"level":30,"time":1715950386829,"pid":18116,"hostname":"shanthu","msg":"Hello, world!"}
+{"level":30,"time":1715969677424,"pid":18292,"hostname":"shanthu","msg":"DB Connection-- New Pool instance created"}
+{"level":30,"time":1715969677448,"pid":18292,"hostname":"shanthu","msg":"Hello, world!"}
+{"level":30,"time":1715973251561,"pid":6504,"hostname":"shanthu","msg":"DB Connection-- New Pool instance created"}
+{"level":30,"time":1715973251595,"pid":6504,"hostname":"shanthu","msg":"Hello, world!"}
+{"level":30,"time":1715984806953,"pid":10856,"hostname":"shanthu","msg":"DB Connection-- New Pool instance created"}
+{"level":30,"time":1715984806974,"pid":10856,"hostname":"shanthu","msg":"Hello, world!"}
+{"level":30,"time":1715984908342,"pid":9948,"hostname":"shanthu","msg":"DB Connection-- New Pool instance created"}
+{"level":30,"time":1715984908364,"pid":9948,"hostname":"shanthu","msg":"Hello, world!"}
+{"level":30,"time":1715985252332,"pid":9248,"hostname":"shanthu","msg":"DB Connection-- New Pool instance created"}
+{"level":30,"time":1715985252349,"pid":9248,"hostname":"shanthu","msg":"Hello, world!"}
+{"level":30,"time":1715985307100,"pid":15964,"hostname":"shanthu","msg":"DB Connection-- New Pool instance created"}
+{"level":30,"time":1715985307119,"pid":15964,"hostname":"shanthu","msg":"Hello, world!"}
+{"level":30,"time":1715985403482,"pid":2668,"hostname":"shanthu","msg":"DB Connection-- New Pool instance created"}
+{"level":30,"time":1715985403503,"pid":2668,"hostname":"shanthu","msg":"Hello, world!"}
+{"level":30,"time":1715985695796,"pid":11156,"hostname":"shanthu","msg":"DB Connection-- New Pool instance created"}
+{"level":30,"time":1715985695821,"pid":11156,"hostname":"shanthu","msg":"Hello, world!"}
+{"level":30,"time":1715985730298,"pid":16540,"hostname":"shanthu","msg":"DB Connection-- New Pool instance created"}
+{"level":30,"time":1715985730317,"pid":16540,"hostname":"shanthu","msg":"Hello, world!"}

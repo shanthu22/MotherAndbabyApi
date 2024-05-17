@@ -28,8 +28,8 @@ export const controllerGetClothById = (req, res) => {
 };
 
 export const controllerAddCloth = (req, res) => {
-  const { name, description, price, quantity, expDate, photoUrl } = req.body;
-  const data = { name, description, price, quantity, expDate, photoUrl };
+  const { name, description, price, quantity, expDate, imagePath } = req.body;
+  const data = { name, description, price, quantity, expDate, imagePath };
   serviceAddCloth(data, (error, results) => {
     if (error) {
       res.status(500).json({ message: "Error in controller" });
@@ -40,9 +40,9 @@ export const controllerAddCloth = (req, res) => {
 };
 
 export const controllerUpdateCloth = (req, res) => {
-  const { id, name, description, price, quantity, expDate, photoUrl } =
+  const { id, name, description, price, quantity, expDate, imagePath } =
     req.body;
-  const data = { id, name, description, price, quantity, expDate, photoUrl };
+  const data = { id, name, description, price, quantity, expDate, imagePath };
   data.id = req.params.id;
 
   serviceUpdateCloth(data, (error, results) => {
