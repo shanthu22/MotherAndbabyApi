@@ -1,5 +1,4 @@
-import pool from "../../db.js";
-
+import pool from "../../../db.js";
 export const serviceGetCloth = async (callback) => {
   console.log("serviceGetCloth+++++++++++++++");
 

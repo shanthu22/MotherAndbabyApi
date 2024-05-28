@@ -1,5 +1,4 @@
-import pool from "../../db.js";
-
+import pool from "../../../db.js";
 export const serviceGetBath = async (callback) => {
   try {
     const results = await pool.query("SELECT * FROM bath");

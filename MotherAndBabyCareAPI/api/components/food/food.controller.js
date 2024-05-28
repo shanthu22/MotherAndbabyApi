@@ -5,7 +5,7 @@ import {
   serviceUpdateFood,
   serviceDeleteFood,
 } from "./food.service.js";
-import logger from "../../logger.js";
+import logger from "../../../logger.js";
 /**
  * Retrieves all food items.
  * @param {Object} req - The request object.
@@ -18,8 +18,18 @@ export const controllerGetFood = (req, res) => {
       logger.error(" Food controller--ERROR");
       res.status(500).json({ message: "Error in controller" });
     } else {
+      const sanitizedResults = results[0];
+      // console.log(sanitizedResults);
+      sanitizedResults.forEach((item) => {
+        //console.log(sanitizedResults);
+        item.expDate = new Date(item.expDate).toLocaleDateString("en-US", {
+          year: "numeric",
+          month: "numeric",
+          day: "numeric",
+        });
+      });
       logger.info("Food controller-- retrieved successfully");
-      res.status(200).json(results);
+      res.status(200).json(sanitizedResults);
     }
   });
 };

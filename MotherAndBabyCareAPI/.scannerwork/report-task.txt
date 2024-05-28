@@ -1,0 +1,6 @@
+projectKey=motherandbabycareapi
+serverUrl=http://localhost:9000
+serverVersion=10.5.1.90531
+dashboardUrl=http://localhost:9000/dashboard?id=motherandbabycareapi
+ceTaskId=0531979d-f2d6-46e9-9e3d-93c54c401ee1
+ceTaskUrl=http://localhost:9000/api/ce/task?id=0531979d-f2d6-46e9-9e3d-93c54c401ee1

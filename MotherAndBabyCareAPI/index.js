@@ -1,16 +1,20 @@
 import express from "express";
 import { GenerateToken } from "./jwtFiles/generateToken.js";
-import { routerFood } from "./api/food/food.router.js";
-import { routerCloth } from "./api/cloth/cloth.router.js";
-import { routerBath } from "./api/bath/bath.router.js";
-import { routerToys } from "./api/toys/toys.router.js";
-import authorization from "./Authorization/authorization.js";
+// import { routerFood } from "./api/food/food.router.js";
+import { routerFood } from "./api/components/food/food.router.js";
+import { routerCloth } from "./api/components/cloth/cloth.router.js";
+import { routerBath } from "./api/components/bath/bath.router.js";
+import { routerToys } from "./api/components/toys/toys.router.js";
+import { routerSuperAdmin } from "./api/components/superAdmin/superAdmin.router.js";
+import { Authorization } from "./api/middleware/Auth.js";
+import { VerifyToken } from "./api/middleware/VerifyToken.js";
+import { ClearLogs } from "./api/middleware/ClearLogs.js";
+import CheckRole from "./api/middleware/CheckRole.js";
 import cors from "cors";
 import jwt from "jsonwebtoken";
 import dotenv from "dotenv";
 
 import logger from "./logger.js";
-logger.info("Hello, world!");
 
 dotenv.config();
 
@@ -47,10 +51,31 @@ app.listen(port, () => {
 });
 
 // Protected route with error handling
-app.post("/login/", GenerateToken);
-app.post("/login/user", authorization);
+app.post("/login/", Authorization);
+app.post("/login/user", Authorization);
 
+//SuperAdmin route
+//app.delete("/deleteLogs", VerifyToken, CheckRole("superadmin"), ClearLogs);
+app.get("/sqlDump", VerifyToken, (req, res) => {}); //TODO: Implement
+
+//CRUD operations routes
 app.use("/food", routerFood);
-app.use("/cloth", routerCloth);
-app.use("/bath", routerBath);
-app.use("/toys", routerToys);
+app.use("/cloth", routerCloth); //TODO: Implement
+app.use("/bath", routerBath); //TODO: Implement
+app.use("/toys", routerToys); //TODO: Implement
+
+//Superadmin routes
+app.use("/superadmin", routerSuperAdmin); //TODO: Implement
+
+
+// ...
+function hehe() {
+  //'Empty block statement' code smell
+  try{
+  }
+  catch(e){
+  }
+  return (
+  // ...
+  )
+  }

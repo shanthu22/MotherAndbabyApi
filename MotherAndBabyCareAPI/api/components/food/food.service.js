@@ -1,4 +1,4 @@
-import pool from "../../db.js";
+import pool from "../../../db.js";
 
 /**
  * Retrieves all food items from the database.
